@@ -1,6 +1,6 @@
 import pandas as pd
 import http.client
 import json
-import streamlit as st
+from streamlitapp import App
 
-print("hi")
+app = App()
