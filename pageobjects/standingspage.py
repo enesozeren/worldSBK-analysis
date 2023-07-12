@@ -2,9 +2,9 @@ import pandas as pd
 from utils import Utils
 import streamlit as st
 
-class Standings:
+class StandingsPage:
     def __init__(self) -> None:
-        pass
+        st.header("Summary Table")
 
     def competitor_dashboards(self) -> None:
         competitor_standings_df = self.competitors_standings()

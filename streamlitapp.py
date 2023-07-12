@@ -1,19 +1,19 @@
 import streamlit as st
-from standings import Standings
+from pageobjects.standingspage import StandingsPage
+from pageobjects.mainpage import MainPage
+from pageobjects.predictionspage import PredictionsPage
 
 class App:
     def __init__(self) -> None:
         st.set_page_config(page_title='WorldSBK Analysis')
 
     def create_mainpage(self) -> None:
-        st.header("What is this page about?")
+        self.mainpage_obj = MainPage()
+        self.mainpage_obj.introduction()
 
     def create_standings(self) -> None:
-        self.standings_obj = Standings()
-        self.standings_obj.competitor_dashboards()
+        self.standingspage_obj = StandingsPage()
+        self.standingspage_obj.competitor_dashboards()
 
     def create_predictions(self) -> None:
-        st.header("TBD")
-
-    def create_analysis(self) -> None:
-        st.header("TBD")
+        self.predictionspage_obj = PredictionsPage()
