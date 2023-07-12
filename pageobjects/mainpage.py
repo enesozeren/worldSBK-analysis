@@ -1,11 +1,13 @@
 import streamlit as st
 from PIL import Image
+import os
 
 class MainPage:
     def __init__(self) -> None:
         st.header("What is this page about?")
-        #image = Image.open()
-        #st.image(image)
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        image = Image.open(f"{current_dir}/sbk_logo.png")
+        st.image(image, width=300)
     
     def introduction(self) -> None:
         st.write("This is a self developed project of https://github.com/enesozeren")
