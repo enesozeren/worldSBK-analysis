@@ -9,15 +9,21 @@ class StandingsPage:
     def competitor_dashboards(self) -> None:
         competitor_standings_df = self.competitors_standings()
         st.dataframe(
-            competitor_standings_df[["name", "team.name", "result.points"]],
+            competitor_standings_df[["name", "team.name", "result.points", "result.victories", \
+                                     "result.podiums", "result.pole_positions"]],
             column_config={
                 "name": "Rider",
                 "team.name": "Team",
-                "result.points": "Points",
                 "result.points": st.column_config.NumberColumn(
                     "Points",
                     format="%d 🛵",
                 ), 
+                "result.victories": st.column_config.NumberColumn(
+                    "Wins",
+                    format="%d 🏆",
+                ),                 
+                "result.podiums": "Podiums",
+                "result.pole_positions": "Pole"
             },
             hide_index=True,
         )
