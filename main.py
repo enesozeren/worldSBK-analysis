@@ -9,7 +9,7 @@ with mainpage:
     app.create_mainpage()
 with standings:
     st.title("Championship Standings")
-    # app.create_standings() # Comment out for api call limits
+    app.create_standings()
 with predictions:
     st.title("Predictions for the Next Race")
     app.create_predictions()
